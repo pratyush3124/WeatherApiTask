@@ -4,8 +4,8 @@ from datetime import datetime
 
 def parseJson():
 
-    jsonFile = open("./weather.json")
-    jsonData = json.load(jsonFile)
+    jsonFile = open("./weather.json") # getting the data from json file
+    jsonData = json.load(jsonFile) # converting to json
 
     date = jsonData['current']['dt']
     sunrise = jsonData['current']['sunrise']
@@ -15,6 +15,7 @@ def parseJson():
     snrise = datetime.fromtimestamp(sunrise).time()
     snset = datetime.fromtimestamp(sunset).time()
 
+    #  main json object we will return
     returnObject = {
         "status":"success",
         "Data":{
